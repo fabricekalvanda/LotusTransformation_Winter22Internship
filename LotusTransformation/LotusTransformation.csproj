@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <None Include="wwwroot\CSS\SharedCustom.css" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LotusTransformation.Services;
+using LotusTransformation.Models;
 
 namespace LotusTransformation
 {
@@ -18,6 +20,9 @@ namespace LotusTransformation
         {
             services.AddMvc();
             services.AddControllersWithViews();
+            services.AddScoped<LogIn>();
+            services.AddMvcCore();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +34,7 @@ namespace LotusTransformation
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
@@ -41,7 +47,7 @@ namespace LotusTransformation
                         action = "Home"
                     });
             });
-            app.UseStaticFiles();
+            
         }
     }
 }

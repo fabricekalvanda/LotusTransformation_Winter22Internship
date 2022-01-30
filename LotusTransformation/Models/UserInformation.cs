@@ -39,10 +39,9 @@ namespace LotusTransformation.Models
         [RegularExpression("^((?!^First Name$)[a-zA-Z '])+$", ErrorMessage = "Please only use letters in your name")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your Date of Birth")]
-        public DateTime DateOfBirth { get; set; }
-
         [Required(ErrorMessage = "Please enter at least one email address")]
+        [RegularExpression("^[A-Za-z0-9._%+-]*@[A-Za-z0-9.-]*\\.[A-Za-z0-9-]{2,}$",
+        ErrorMessage = "Email is required and must be properly formatted.")]
         public string PrimaryEmail { get; set; }
 
         [Required(ErrorMessage = "Please enter a Primary Phone Number")]
@@ -54,7 +53,11 @@ namespace LotusTransformation.Models
         /// <summary>
         /// Below Fields are optional. They should still have the same Regex restrictions as the above form fields to prevent SQL Injects XSS attacks
         /// </summary>
+        [RegularExpression("^[A-Za-z0-9._%+-]*@[A-Za-z0-9.-]*\\.[A-Za-z0-9-]{2,}$",
+        ErrorMessage = "Email is required and must be properly formatted.")]
         public string? SecondaryEmail { get; set; }
+
+        public DateTime DateOfBirth { get; set; }
 
         public string? SecondaryPhoneNumber { get; set; }
 

@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model LotusTransformation.Models.LogIn;
+
+<body>
+    <fieldset>
+        <form>
+            <label id = "LogInLabel" asp-for=""> Username or Email </label>
+            <input id = "LogInId" asp-for="" />
+            <span id = "LogInValidation" asp-validation-for=""></span>
+
+            <label asp-for="Password"> Password</label>
+            <input id = "Password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+
+            <button id ="PreVal"type="submit" onclick="SignInPreVal.js">LogIn</button>
+            <button type="submit">Sign Up</button>
+
+        </form>
+    </fieldset>
+    <script type="text/javascript" src="~/Javascript/SignInPreVal.js"></script>
+</body>
+<!--TODO: Make Javascript file to run injected service prior to submitting to data and fill out the remainder of asp-tag helpers.-->
