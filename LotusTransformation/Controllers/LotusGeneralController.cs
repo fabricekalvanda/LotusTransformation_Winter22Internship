@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LotusTransformation.Models;
 
 namespace LotusTransformation.Controllers
 {
-    public class LotusController: Controller
+    public class LotusGeneralController: Controller
     {
         [HttpGet]   
         public IActionResult Home()
@@ -29,21 +30,11 @@ namespace LotusTransformation.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult BookAnAppointment()
-        {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult SignIn()
+        public IActionResult Inspiration()
         {
             return View();
         }
 
-        [HttpGet]
-        public IActionResult SignUp_UserInformation()
-        {
-            return View();
-        }
     }
 
 

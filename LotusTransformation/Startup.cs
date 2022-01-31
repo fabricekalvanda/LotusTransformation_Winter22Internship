@@ -43,11 +43,36 @@ namespace LotusTransformation
                     pattern: "{controller}/{action}",
                     defaults: new
                     {
-                        controller = "Lotus",
+                        controller = "LotusGeneral",
                         action = "Home"
                     });
             });
-            
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "CreateAccount",
+                    pattern: "{controller}/{action}",
+                    defaults: new
+                    {
+                        controller = "CreateAccount",
+                        action = "CreateAccount"
+                    });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "SignIn",
+                    pattern: "{controller}/{action}",
+                    defaults: new
+                    {
+                        controller = "SignIn",
+                        action = "SignIn"
+                    });
+            });
+
+
         }
     }
 }

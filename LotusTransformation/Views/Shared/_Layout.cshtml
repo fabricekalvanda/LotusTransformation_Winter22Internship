@@ -1,4 +1,5 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using System.Web.*;
 <!DOCTYPE html>
 
 <html>
@@ -7,8 +8,9 @@
     <meta name="viewpot" content="width=device-width" />
     <title>@ViewData["Title"]</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../../lib/twitter-bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/react-bootstrap/react-bootstrap.min.js"/>
+    <link rel="stylesheet" type="text/css" href="~/lib/twitter-bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/twitter-bootstrap/css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="~/CSS/SharedCustom.css" />
 
 
@@ -22,12 +24,12 @@
         <h1 id="Title"class="Title">Lotus Transformation</h1>
         <h2 id="SubTitle"> Holistic and Wellness Coaching</h2>
         <nav id="MainSiteNavigation">
-            <a asp-controller="Lotus" asp-action="Home">Home</a>
-            <a asp-controller="Lotus" asp-action="About">About</a>
-            <a asp-controller="Lotus" asp-action="Services">Services</a>
-            <a asp-controller="Lotus" asp-action="Meditations">Meditations</a>
-            <a asp-controller="Lotus" asp-action="BookAnAppointment">Book An Appointment</a>
-            <a asp-controller="Lotus" asp-action="SignIn">Sign In / Sign Up</a>
+            <a asp-controller="LotusGeneral" asp-action="Home">Home</a>
+            <a asp-controller="LotusGeneral" asp-action="About">About</a>
+            <a asp-controller="LotusGeneral" asp-action="Services">Services</a>
+            <a asp-controller="LotusGeneral" asp-action="Meditations">Meditations</a>
+            <a asp-controller="LotusGeneral" asp-action="Inspiration">Inspiration</a>
+            <a asp-controller="SignIn" asp-action="SignIn">Sign In / Sign Up</a>
         </nav>
     </header>
 
@@ -39,12 +41,12 @@
     <footer>
     </footer>
 
-    <script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../lib/popper.js/cjs/popper.min.js"></script>
-    <script type="text/javascript" src="../../lib/twitter-bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../lib/jquery-validate/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="../../lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script type="text/javascript" src="../../lib/bootstrap.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/popper.js/cjs/popper.min.js"></script>
+    <script type="text/javascript" src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap.js"></script>
 
 </body>
     

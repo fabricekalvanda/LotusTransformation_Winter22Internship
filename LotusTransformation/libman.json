@@ -21,6 +21,10 @@
     {
       "library": "jquery-validation-unobtrusive@3.2.12",
       "destination": "lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "react-bootstrap@2.1.1",
+      "destination": "wwwroot/lib/react-bootstrap/"
     }
   ]
 }

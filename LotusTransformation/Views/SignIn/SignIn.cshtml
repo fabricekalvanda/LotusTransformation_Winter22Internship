@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model LotusTransformation.Models.LogIn;
+
+<body>
+    <fieldset>
+
+        <form>
+            <label id="LogInLabel"> Username or Email </label>
+            <input id="LogInId" />
+            <span id="LogInValidation"></span>
+
+            <label asp-for="Password"> Password</label>
+            <input id="Password" type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+
+            <button type="submit">LogIn</button>
+            <button type="reset">Clear Forms</button>
+
+            <p>Don't have an account yet? Make one <a asp-controller="CreateAccount" asp-action="AccountCreation">Here</a></p>
+
+        </form>
+    </fieldset>
+</body>
