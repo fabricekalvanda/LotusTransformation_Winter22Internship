@@ -4,33 +4,50 @@
 <html>
 
 <head>
-    <meta name="viewpot" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
 
-    <link rel="stylesheet" type="text/css" href="~/lib/react-bootstrap/react-bootstrap.min.js" />
-    <link rel="stylesheet" type="text/css" href="~/lib/twitter-bootstrap/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="~/lib/react-bootstrap/react-bootstrap.min.js"> -->
+    <link rel="stylesheet" type="text/css" href="~/lib/twitter-bootstrap/css/bootstrap.css" >
     <link rel="stylesheet" type="text/css" href="~/lib/twitter-bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" type="text/css" href="~/CSS/SharedCustom.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/CSS/SharedCustom.css">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Navigation-with-Button.css">
 
 
 </head>
 
 <body>
+<div class="bg-image">
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-button" style="background: #FAEBD7;">
+        <div class="container">
+            <img src="~/Images/Logo/R.png" style="height: 100px;width: 100px;"><a class="navbar-brand" href="#" style="font-family: 'Noto Sans Indic Siyaq Numbers', sans-serif;">Lotus Transformation</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" style="color: var(--bs-gray-900);border-right-width: 0.5px;border-right-style: solid;" asp-controller="LotusGeneral" asp-action="Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link"  style="color: var(--bs-gray-900);border-right-width: 0.5px;border-right-style: solid;" asp-controller="LotusGeneral" asp-action="About">About</a></li>
+                    <li class="nav-item"><a class="nav-link"  style="color: var(--bs-gray-900);border-right-width: 0.5px;border-right-style: solid;"asp-controller="LotusGeneral" asp-action="Services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link"  style="color: var(--bs-gray-900);border-right-width: 0.5px;border-right-style: solid;" asp-controller="LotusGeneral" asp-action="Meditations">Meditations</a></li>
+                    <li class="nav-item"><a class="nav-link"  style="color: var(--bs-gray-900);" asp-controller="LotusGeneral" asp-action="Inspiration">Inspiration</a></li>
+                </ul><span class="navbar-text actions"> <a class="login"  style="color: var(--bs-gray-900);" asp-controller="SignIn" asp-action="SignIn" >Log In</a><a class="btn btn-light action-button" role="button" style="color: var(--bs-gray-900);" asp-controller="SignIn" asp-action="SignIn">Sign Up</a></span>
+            </div>
+        </div>
+    </nav>
+       <div class="container py-5 my-5 h-75" style="background-color:#c8ee90; border-radius: 15px;">
+        <h1 class="display-5 fw-bold">Welcome to Lotus Transformation!</h1>
+        <p class="col-md-8 fs-4">Gravida quis blandit turpis cursus in hac habitasse platea dictumst. Sapien faucibus et molestie ac feugiat. Blandit massa enim nec dui nunc. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Fringilla urna porttitor rhoncus dolor purus. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Sagittis aliquam malesuada bibendum arcu vitae elementum. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Malesuada bibendum arcu vitae elementum curabitur. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor.</p>
+<p>Hendrerit dolor magna eget est lorem ipsum dolor sit amet. Lacus sed turpis tincidunt id aliquet. Est sit amet facilisis magna etiam tempor orci eu lobortis. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Dignissim diam quis enim lobortis scelerisque fermentum dui. Aenean euismod elementum nisi quis. Parturient montes nascetur ridiculus mus. Pellentesque sit amet porttitor eget. Suspendisse sed nisi lacus sed.</p>
+        <a class="btn btn-primary btn-lg my-5 border-radius: 15px;" role="button" asp-controller="SignIn" asp-action="SignIn">Sign Up!</a>
+    </div>
+ </div>
 
-    <header id="SiteHeader" class="">
 
-        <div id"LogoDiv" class="LogoContainer"><img class="" src="~/Images/Logo/R.png" height="90" width="90" /></div>
-        <h1 id="Title" class="Title">Lotus Transformation</h1>
-        <h2 id="SubTitle"> Holistic and Wellness Coaching</h2>
-        <nav id="MainSiteNavigation">
-            <a asp-controller="LotusGeneral" asp-action="Home">Home</a>
-            <a asp-controller="LotusGeneral" asp-action="About">About</a>
-            <a asp-controller="LotusGeneral" asp-action="Services">Services</a>
-            <a asp-controller="LotusGeneral" asp-action="Meditations">Meditations</a>
-            <a asp-controller="LotusGeneral" asp-action="Inspiration">Inspiration</a>
-            <a asp-controller="SignIn" asp-action="SignIn">Sign In / Sign Up</a>
-        </nav>
-    </header>
+
+
+
+
+
+
 
 
     @RenderBody()
