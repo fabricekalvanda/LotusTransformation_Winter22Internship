@@ -40,6 +40,8 @@ namespace LotusTransformation.Models
         [Required(ErrorMessage = "A Password is required")]
         public string Password { get; set; }
 
+        
+
 
 
         [Required(ErrorMessage = "Please enter at least one email address")]
@@ -54,7 +56,7 @@ namespace LotusTransformation.Models
         [Required]
         public string PrimaryPhoneType { get; set; }
 
-#nullable enable 
+#nullable enable // Optional user information, not required
         /// <summary>
         /// Below Fields are optional. They should still have the same Regex restrictions as the above form fields to prevent SQL Injects XSS attacks
         /// </summary>
@@ -62,7 +64,7 @@ namespace LotusTransformation.Models
         ErrorMessage = "Email is required and must be properly formatted.")]
         [EmailAddress]
         public string? SecondaryEmail { get; set; }
-        
+
         public DateTime? DateOfBirth { get; set; }
 
         [Phone]

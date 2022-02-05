@@ -25,9 +25,9 @@ namespace LotusTransformation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddControllersWithViews() .AddRazorRuntimeCompilation();
+            services.AddControllersWithViews();
             services.AddScoped<LogIn>();
-            services.AddMvcCore();
+            services.AddMvcCore().AddRazorRuntimeCompilation();
             services.AddDbContext<LotusTransformationContext>(options => options.UseSqlServer(configuration.GetConnectionString("LotusTransformationDb")));
             
         }
