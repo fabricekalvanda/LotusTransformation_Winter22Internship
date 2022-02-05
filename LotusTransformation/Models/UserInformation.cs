@@ -15,7 +15,7 @@ namespace LotusTransformation.Models
         /// database
         /// </summary>
         [Required]
-        public long UserKey { get; set; }
+        public long UserID { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter your first name")]
         [RegularExpression("^((?!^First Name$)[a-zA-Z '])+$", ErrorMessage = "Please only use letters in your name")]
@@ -25,15 +25,15 @@ namespace LotusTransformation.Models
         [RegularExpression("^((?!^First Name$)[a-zA-Z '])+$", ErrorMessage = "Please only use letters in your name")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "A valid mailing address is required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "A valid mailing address is required")]
         public string Address1 { get; set; }
 
-        [Required(ErrorMessage = "A valid City is required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "A valid City is required")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "A valid State, Province or Region is required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "A valid State, Province or Region is required")]
         public string StateOrProvince { get; set; }
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "A Valid Country is required")]
         public string Country { get; set; }
         [Required(ErrorMessage = "Please create a username")]
         public string UserName { get; set; }
