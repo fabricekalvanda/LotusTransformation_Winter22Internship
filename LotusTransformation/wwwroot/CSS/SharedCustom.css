@@ -1,29 +1,6 @@
-﻿html{
-    font-size: 16px;
-}
-
-header{
-    background-color:white;
-    grid-template-rows: max-content;
-    grid-row: 3;
-    grid-template-columns: max-content;
-    grid-column: 4;
-    column-width: 25rem;
-    grid-auto-flow:row;
-    height: fit-content;
-}
-
-.LogoContainer{
-    max-width:fit-content;
-    max-height:fit-content;
-    grid-area: auto;
-    position:absolute;
-
-}
-.Title{
-    grid-row: 1;
-    grid-column: 2/3;
-    display: flex;
-    position: relative;
-
+﻿.bg-image {
+    background-image: url('https://images.unsplash.com/photo-1444159759392-aeeb3d5851c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cm9ja3MlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
 }

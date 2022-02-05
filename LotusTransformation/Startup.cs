@@ -19,7 +19,7 @@ namespace LotusTransformation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews() .AddRazorRuntimeCompilation();
             services.AddScoped<LogIn>();
             services.AddMvcCore();
             
