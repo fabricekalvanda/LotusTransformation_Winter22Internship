@@ -11,24 +11,27 @@ using LotusTransformation.Services;
 using LotusTransformation.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 
 namespace LotusTransformation
 {
     public class Startup
     {
-        private readonly IConfiguration configuration;
         public Startup(IConfiguration configuration)
-        {
-            this.configuration = configuration; ;
+        { 
+            this.Configuration = configuration; ;
         }
+
+        private IConfiguration Configuration { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.AddControllersWithViews();
             services.AddScoped<LogIn>();
             services.AddMvcCore().AddRazorRuntimeCompilation();
-            services.AddDbContext<LotusTransformationContext>(options => options.UseSqlServer(configuration.GetConnectionString("LotusTransformationDb")));
+            services.AddDbContext<LotusTransformationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LotusTransformationDb")));
+            services.AddScoped<IAccountCreation, EFAccountCreation>();
+           
             
         }
 
@@ -42,6 +45,7 @@ namespace LotusTransformation
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseStatusCodePages();
 
             app.UseEndpoints(endpoints =>
             {

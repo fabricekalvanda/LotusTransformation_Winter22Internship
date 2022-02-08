@@ -1,0 +1,20 @@
+﻿
+/*Validation CSS Rules ONLY*/
+ .field-validation-error{
+    color: fuchsia;
+    font-weight: bold;
+}
+
+ .input-validation-error{
+     border: 1px solid #f00; 
+     background-color: #fee;
+
+ }
+
+ .validation-summary-errors{
+     font-weight:bold;
+     color: orange;
+ }
+
+
+/*Validation CSS Rules ONLY*/

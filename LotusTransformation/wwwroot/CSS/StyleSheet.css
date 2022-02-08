@@ -1,0 +1,6 @@
+﻿/*Validation CSS Rules*/
+
+.input-validation-error{
+    color: fuchsia;
+    font-weight: bold;
+}

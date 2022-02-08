@@ -2,7 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <GenerateRuntimeConfigurationFiles>True</GenerateRuntimeConfigurationFiles>
+	  <NeutralLanguage>aa-ER</NeutralLanguage>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\CSS\StyleSheet.css" />
+  </ItemGroup>
+	
 
   <ItemGroup>
     <None Include="wwwroot\CSS\SharedCustom.css" />
@@ -425,9 +433,15 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
