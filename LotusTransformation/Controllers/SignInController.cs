@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LotusTransformation.Controllers
 {
-    public class LotusController: Controller
+    public class SignInController : Controller
     {
-        public IActionResult Home()
+        public IActionResult SignIn()
         {
             return View();
         }
