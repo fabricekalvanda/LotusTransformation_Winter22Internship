@@ -12,7 +12,7 @@ using LotusTransformation.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace LotusTransformation
 {
@@ -31,8 +31,24 @@ namespace LotusTransformation
             services.AddMvcCore().AddRazorRuntimeCompilation();
             services.AddDbContext<LotusTransformationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LotusTransformationDb")));
             services.AddScoped<IAccountCreation, EFAccountCreation>();
-           
-            
+
+            //2106109559544007
+            //3df0dbc454ba97ac321e88c7eb92539c
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            })
+            .AddCookie(options =>
+              {
+                  options.LoginPath = "/CreateAccount/AccountCreation";
+              })
+            .AddFacebook(options =>
+            {
+                options.AppId = "2106109559544007";
+                options.AppSecret = "3df0dbc454ba97ac321e88c7eb92539c";
+            });
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +62,8 @@ namespace LotusTransformation
             app.UseRouting();
             app.UseStaticFiles();
             app.UseStatusCodePages();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
